@@ -13,13 +13,13 @@ services:
     build: ./backend/
     env_file: .env
     volumes:
-      - static:/backend_static/static
+      - static:/backend_static/
   frontend:
     env_file: .env
     build: ./frontend/
     command: cp -r /app/build/. /static/
     volumes:
-      - static:/frontend_static
+      - static:/frontend_static/
   gateway:
     build: ./nginx/
     env_file: .env
